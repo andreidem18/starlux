@@ -1,0 +1,92 @@
+nav.open-menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    transition: 1s;
+}
+
+nav{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+}
+
+nav .flex-items{
+    display: flex;
+    height: 97px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .branch-name{
+    font-family: 'Teimer';
+    font-weight: 300;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+}
+
+nav .menu-button{
+    background: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .menu-button i{
+    font-size: 40px;
+}
+
+nav .cart-link {
+    color: #000;
+    line-height: 0;
+}
+
+nav .cart-link i{
+    font-size: 30px;
+}
+
+nav .menu{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+nav .menu li{
+    padding: 20px;
+}
+
+nav .menu li a{
+    text-decoration: none;
+    font-size: 24px;
+}
+
+nav .social-networks-icons a{
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+
+@media (min-width: 768px) {
+    nav .flex-items{
+        height: 190px;
+    }
+    nav .menu{
+        flex-direction: row;
+    }
+    
+    nav .menu li a{
+        text-decoration: none;
+        font-size: 16px;
+    }
+}

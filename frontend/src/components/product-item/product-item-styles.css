@@ -1,0 +1,101 @@
+.product-detail{
+    padding-top: 120px;
+    background: #faf8f0;
+}
+
+.product-detail .slider{
+    overflow: hidden;
+    position: relative;
+}
+
+.product-detail .slider .counter{
+    display: block;
+    width: 100%;
+    text-align: right;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.product-detail .slider .arrow-button{
+    position: absolute;
+    background: transparent;
+    top: 0;
+    bottom: 0;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+}
+
+.product-detail .slider .arrow-button i{ color: #e2d6a7; }
+
+.product-detail .slider .product-images{
+    display: flex;
+    transition: .7s ease-in-out;
+}
+
+.product-detail .slider img, .product-detail .slider .image{
+    width: 100%;
+}
+.product-detail .slider .image{
+    padding: 0 10px;
+}
+
+
+.product-detail .product-name{
+    font-family: 'Teimer';
+    font-weight: 300;
+    font-size: 19px;
+    margin-bottom: 23px;
+    text-align: center;
+}
+
+.product-detail .price{
+    display: block;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+
+.product-detail .input-quantity{ 
+    margin: 0 auto 40px auto;
+}
+
+.product-detail .link-squared{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.product-detail .product-description{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.product-detail .product-options{
+    display: flex;
+    flex-direction: column;
+}
+
+.product-detail .asterisk{
+    font-size: 35px;
+    margin: 50px 0 0 20px;
+}
+
+
+
+@media (min-width: 768px) {
+    .product-detail{ padding-top: 210px; }
+
+    .product-detail .product-flex{ 
+        display: flex; 
+        align-items: center;
+    }
+
+    .product-detail .product-flex .col{
+        width: 50%;
+        padding: 0 30px;
+    }
+
+    .product-detail .product-options{ flex-direction: column-reverse; }
+}

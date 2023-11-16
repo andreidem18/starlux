@@ -1,0 +1,33 @@
+footer{
+    background: #f2efe3;
+    padding: 60px 0 70px;
+}
+
+footer [class*=col-]{
+    padding: 13px;
+}
+
+footer .asterisk{
+    font-size: 24px;
+}
+
+footer .branch-name{
+    font-family: 'Teimer';
+    font-weight: 300;
+    font-size: 22px;
+}
+
+footer [class*=col-] a{
+    display: block;
+    border-bottom: 1px solid #000;
+    width: fit-content;
+    margin-bottom: 5px;
+}
+
+
+@media (min-width: 768px) {
+    footer .container{ display: flex;}
+    footer .col-1{ width: 8.33333%;}
+    footer .col-3{ width: 25%;}
+    footer .col-5{ width: 41.6666%;}
+}

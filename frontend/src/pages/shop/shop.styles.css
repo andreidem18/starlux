@@ -1,0 +1,51 @@
+.shop{
+    background: #faf8f0;
+    padding: 120px 0;
+}
+
+.shop .filters{
+    margin-bottom: 40px;
+    max-width: 500px;
+    margin: 0 auto 60px auto;
+}
+
+.shop .filters .searchbox{
+    display: flex;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.shop .filters .searchbox input{
+    padding: 10px 20px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    margin-right: 10px;
+    flex-grow: 1;
+}
+
+.shop .filters .categories{
+    display: flex;
+    justify-content: center;
+}
+
+.shop .filters .categories button{
+    background: transparent;
+    padding: 0 10px;
+}
+
+.shop .filters .categories button.left-border{
+    border-left: 1px solid rgba(0, 0, 0, .2);
+}
+
+
+.shop .free-shipping{
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+
+@media (min-width: 768px) {
+    .shop{
+        padding-top: 220px;
+    }
+}
