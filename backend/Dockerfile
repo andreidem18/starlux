@@ -1,7 +1,7 @@
 # base image  
 FROM python:3.9.18-alpine3.18  
 # setup environment variable  
-ENV APP_HOME=/home/app/webapp  
+ENV APP_HOME=/app  
 
 # set work directory  
 RUN mkdir -p $APP_HOME  
