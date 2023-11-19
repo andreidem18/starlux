@@ -16,7 +16,7 @@ def buy_cart(request):
         order = Order.objects.create(product=item.product, user=user, quantity=item.quantity)
         orders.append(order)
     user.cart.all().delete()
-    serialized = OrderSerializer(orders, many=True)
+    serialized = OrderSerializer(orders, many=True, context={"request": request})
     return Response(status=status.HTTP_200_OK, data = serialized.data)
 
 @api_view(['GET'])
