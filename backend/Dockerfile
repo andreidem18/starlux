@@ -18,9 +18,13 @@ RUN pip install --upgrade pip
 # copy whole project to your docker home directory. 
 COPY . $APP_HOME  
 
-RUN apk update \
-    && apk add postgresql-dev gcc python3-dev musl-dev 
-RUN python3 -m pip install -r requirements.txt
+# run this command to install all dependencies  
+RUN \
+    apk add --no-cache postgresql-libs && \
+    apk add --no-cache --virtual .build-deps gcc musl-dev postgresql-dev && \
+    python3 -m pip install -r requirements.txt --no-cache-dir && \
+    apk --purge del .build-deps 
+
 
 # port where the Django app runs  
 EXPOSE 8000  
