@@ -25,8 +25,8 @@ services:
       DEBUG: ${DEBUG}
     
     volumes:
-      - starlux-data:/app
+      - starlux-images:/app/media
 
 
 volumes:
-  starlux-data:
+  starlux-images:
