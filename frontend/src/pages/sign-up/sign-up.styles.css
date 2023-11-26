@@ -1,0 +1,68 @@
+
+
+.testing-user{
+    width: 100%;
+    background: #add8e6;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.testing-user strong, .testing-user span{ 
+    display: block;
+    margin-bottom: 10px;
+}
+.testing-user strong{ text-align: center; }
+.testing-user span{ display: flex; }
+.testing-user span i{ padding-right: 10px; }
+
+
+
+.sign-up-form label{
+    margin-bottom: 20px;
+    display: block;
+}
+
+.sign-up-form label input{
+    display: block;
+    padding: 10px 20px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    width: 100%;
+    margin-top: 10px;
+}
+
+.sign-up-form .login-button{
+    margin: 45px 0 30px;
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    font-weight: 500;
+    background: #000;
+    color: #fff;
+}
+
+.sign-up-form .login-button img {
+    width: 25px;
+}
+
+.sign-up-form .error {
+    color: #ff0000;
+}
+
+.signup-message{ text-align: center; }
+
+.signup-message a{
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    .names{
+        display: flex;
+    }
+    .names label:nth-child(1){
+        padding-right: 7px;
+    }
+    .names label:nth-child(2){
+        padding-left: 7px;
+    }
+}

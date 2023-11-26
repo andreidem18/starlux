@@ -1,0 +1,31 @@
+.notification{
+    position: fixed;
+    top: -100%;
+    opacity: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+    transition: 1s cubic-bezier(1, 0.06, 0, 1);
+}
+
+.notification.show{
+    top: 25vh;
+    opacity: 1;
+    transition: 1s cubic-bezier(1, 0.06, 0, 1);
+}
+
+.notification .content{
+    width: 60%;
+    min-width: 280px;
+    margin: 0 auto;
+    background: #c3e3ee;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notification .content i, .notification .content .message{
+    margin: 0 5px;
+}

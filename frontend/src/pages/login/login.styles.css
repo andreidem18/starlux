@@ -1,0 +1,108 @@
+.testing-user{
+    width: 100%;
+    background: #add8e6;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.testing-user strong, .testing-user span{ 
+    display: block;
+    margin-bottom: 10px;
+}
+.testing-user strong{ text-align: center; }
+.testing-user span{ display: flex; }
+.testing-user span i{ padding-right: 10px; }
+
+.testing-user .flex {
+    display: flex;
+    align-items: flex-end;
+}
+
+.testing-user .credentials {
+    flex: 1;
+}
+
+.testing-user .copy-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    background: #16c3fc;
+    border: 3px solid #03b0ea;
+    color: #fff;
+    font-size: 18px;
+    position: relative;
+}
+
+.testing-user .copy-button i {
+    color: inherit;
+    font-size: inherit;
+}
+
+.testing-user .copy-button:active {
+    background: #03b0ea;
+}
+
+.testing-user .copy-button.show-copied-message::after {
+    content: 'Data copied successfully ↓';
+    width: 180px;
+    height: 20px;
+    padding: 3px;
+    background: rgba(0, 0, 0, .8);
+    position: absolute;
+    font-size: 13px;
+    border-radius: 3px;
+    bottom: -101%;
+    animation: fade-in .2s;
+}
+
+
+.login-form label{
+    margin-bottom: 20px;
+    display: block;
+}
+
+.login-form label input{
+    display: block;
+    padding: 10px 20px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    width: 100%;
+    margin-top: 10px;
+}
+
+.login-form .login-button{
+    margin: 45px 0 30px;
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    font-weight: 500;
+    background: #000;
+    color: #fff;
+}
+
+.login-form .login-button img {
+    width: 30px;
+}
+
+.signup-message{ text-align: center; }
+
+.signup-message a{
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    .names{
+        display: flex;
+    }
+    .names label:nth-child(1){
+        padding-right: 7px;
+    }
+    .names label:nth-child(2){
+        padding-left: 7px;
+    }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

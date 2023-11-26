@@ -1,0 +1,29 @@
+.input-quantity{
+    width: 100%;
+    max-width: 170px;
+}
+
+.input-quantity label{
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.input-quantity .flex{ display: flex; }
+
+.input-quantity .flex button{
+    width: 15%;
+    padding: 10px 20px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-quantity .flex input{
+    width: 70%;
+    padding: 10px 20px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    text-align: center;
+    font-size: 18px;
+}

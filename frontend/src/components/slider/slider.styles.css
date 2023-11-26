@@ -1,0 +1,38 @@
+.slider{
+    overflow: hidden;
+    position: relative;
+}
+
+.slider .counter{
+    display: block;
+    width: 100%;
+    text-align: right;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.slider .arrow-button{
+    position: absolute;
+    background: transparent;
+    top: 0;
+    bottom: 0;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+}
+
+.slider .arrow-button i{ color: #e2d6a7; }
+
+.slider .slides{
+    display: flex;
+    transition: .7s ease-in-out;
+}
+
+.slider img, .slider .slide{
+    width: 100%;
+}
+.slider .slide{
+    padding: 0 10px;
+}

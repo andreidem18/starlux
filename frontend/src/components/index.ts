@@ -1,4 +1,12 @@
+export { default as NavAuthButton } from './nav-auth-button/nav-auth-button.component';
+export { default as Slider } from './slider/slider.component';
 export { default as ProductItem } from './product-item/product-item.component';
 export { default as ProductsList } from './products-list/products-list.component';
+export { default as ProductsListSkeleton } from './products-list/products-list.skeleton';
 export { default as Footer } from './footer/footer.component';
 export { default as NavBar } from './navbar/navbar.component';
+export { default as LoadingScreen } from './loading-screen/loading-screen.component';
+export { default as Notification } from './notification/notification.component';
+export { default as InputQuantity } from './input-quantity/input-quantity.component';
+export { default as SliderSmall } from './slider-small/slider-small.component';
+export { default as SliderSmallItem } from './slider-small/slider-small-item.component';

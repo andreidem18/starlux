@@ -6,7 +6,7 @@ const Footer = () => {
         <footer>
             <div className="container">
                 <div className='asterisk col-1'>*</div>
-                <div className='branch-name col-5'>Anise</div>
+                <div className='branch-name col-5'>Starlux</div>
                 <div className='col-3'>
                     <Link to="/shop">Shop</Link>
                     <Link to="/about">About</Link>

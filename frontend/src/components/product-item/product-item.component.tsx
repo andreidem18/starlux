@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Product } from '../../interfaces';
-import './product-item-styles.css'
+import './product-item.styles.css'
 
 const ProductItem = ({ product }: { product: Product}) => {
 
@@ -8,7 +8,7 @@ const ProductItem = ({ product }: { product: Product}) => {
     return(
         <Link 
             to={`/shop/${product.id}/`} 
-            className='product animate' 
+            className='product-item animate' 
             key={product.id} 
         >
             <div className="product-image">

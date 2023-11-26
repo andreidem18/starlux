@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+.orders{
+    padding-top: 120px;
+    padding-bottom: 60px;
+    background: #fff;
+}
+
+.orders h1{
+    font-family: 'Teimer';
+    font-weight: 300;
+    margin-bottom: 60px;
+}
+
+.orders table { 
+    border-collapse: collapse; 
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.orders table .date{ display: none; }
+
+.orders table tr {
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+.orders table thead tr th{
+    font-family: 'Montserrat';
+    color: rgba(0, 0, 0, .7);
+    font-size: 12px;
+    font-weight: 300;
+    padding-bottom: 10px;
+}
+
+.orders table tbody .order td{
+    padding: 40px 10px;
+}
+
+.orders table tbody .order .item{
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+}
+
+.orders table tbody .order .item button{
+    background: transparent;
+    width: 8%;
+    color: rgba(0, 0, 0, .4);
+    font-size: 10px;
+}
+
+.orders table tbody .order .item button i{
+    color: inherit;
+    font-size: inherit;
+}
+
+.orders table tbody .order .item .product-image{
+    width: 30%;
+    line-height: 0;
+    padding-left: 10px;
+}
+
+.orders table tbody .order .item .product-image img{
+    width: 100%;
+}
+
+.orders table tbody .order .item .product-name{
+    width: 62%;
+    padding-left: 10px;
+    font-size: 4vw;
+}
+
+.orders table tbody .order .quantity span{
+    display: block;
+    border: 1px solid rgba(0, 0, 0, .4);
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 70px;
+    margin: 0 auto;
+}
+
+.orders table tbody .order .price{
+    font-size: 4vw;
+    text-align: center;
+}
+
+.orders .subtotal{
+    text-align: right;
+    margin-bottom: 40px;
+}
+
+.orders .subtotal .price{
+    font-weight: 500;
+    font-size: 22px;
+    padding-left: 15px;
+}
+
+
+.orders .checkout-button{
+    width: 100%;
+}
+
+
+.orders .empty-message{ margin-bottom: 20px; }
+
+
+@media (min-width: 400px) {
+    .orders table tbody .order .item .product-name, .orders table tbody .order .price{
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 576px) {
+    .orders table tbody .order .item .product-image{ width: 150px; }
+    .orders table tbody .order .item .product-name{ flex-grow: 1; }
+    .orders table tbody .order .item button{
+        width: 10%;
+        font-size: 15px;
+    }
+    .orders table tbody .order td{
+        padding: 20px 10px;
+    }
+    .orders .checkout-button{
+        width: 250px;
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .orders{
+        padding-top: 210px;
+    }
+    .orders table tbody .order .item .product-name{
+        padding-left: 50px;
+    }
+    .orders table tbody .order .item .product-image{ width: 120px; }
+}
+
+@media (min-width: 992px) {
+    .orders table .date{ display: table-cell; }
+    .orders table td.date{
+        text-align: center;
+    }
+}

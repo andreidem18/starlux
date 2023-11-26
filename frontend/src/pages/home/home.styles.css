@@ -137,30 +137,6 @@
     margin-bottom: 40px;
 }
 
-.creation-section .slider-buttons{
-    text-align: right;
-    margin-bottom: 10px;
-}
-
-.creation-section .slider-buttons button{
-    background: transparent;
-    margin: 0 10px;
-}
-
-.creation-section .slider{
-    overflow: hidden;
-    position: relative;
-}
-
-.creation-section .necklaces{
-    display: flex;
-    transition: .7s ease-in-out;
-}
-
-.creation-section .necklace{
-    width: 100%;
-}
-
 .creation-section .necklace img{
     width: 90%;
     margin: 0 auto;

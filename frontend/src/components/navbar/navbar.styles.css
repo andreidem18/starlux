@@ -1,3 +1,14 @@
+nav{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+}
+
+nav.light * {
+    color: #fff;
+}
+
 nav.open-menu{
     position: fixed;
     top: 0;
@@ -8,11 +19,8 @@ nav.open-menu{
     transition: 1s;
 }
 
-nav{
-    position: absolute;
-    width: 100%;
-    top: 0;
-    z-index: 99;
+nav.open-menu * {
+    color: #393838;
 }
 
 nav .flex-items{
@@ -24,7 +32,19 @@ nav .flex-items{
     align-items: center;
 }
 
-nav .branch-name{
+nav .branch-name-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 4px;
+}
+
+nav .branch-name-container img {
+    width: 50px;
+}
+
+nav .branch-name-container .branch-name{
     font-family: 'Teimer';
     font-weight: 300;
     font-size: 30px;

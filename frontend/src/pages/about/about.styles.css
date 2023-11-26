@@ -1,0 +1,122 @@
+.about-page .story {
+    padding: 140px 0 70px;
+    background: #b4a545;
+    color: #fff;
+}
+
+.about-page .story * {
+    color: inherit;
+}
+
+.about-page .story-first-part {
+    margin-bottom: 20px;
+}
+
+/* .about-page .story p {
+    margin-bottom: 40px;
+} */
+
+.about-page .about-image-1 {
+    margin-left: auto;
+    display: block;
+}
+
+.about-page .story-title {
+    font-family: 'Teimer';
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.about-page .story .story-image {
+    background-image: url(../../assets/images/about-page-image-2.jpeg);
+    background-size: cover;
+    height: 248px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px;
+}
+
+.about-page .story .story-image .text * {
+    color: #fff;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.about-page .about-image-1 {
+    width: 75%;
+    height: 304px;
+    object-fit: cover;
+}
+
+.about-page .approach {
+    display: flex;
+    gap: 7px;
+}
+
+.about-page .approach .approach-item {
+    width: calc(50% - 7px);
+    text-align: center;
+}
+
+.about-page .approach .approach-item img {
+    width: 100%;
+    /* height: 238px; */
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-page .approach .approach-item img.center-image {
+    object-position: 10%;
+}
+
+.about-page .shop-section {
+    padding-top: 60px;
+}
+
+@media (min-width: 768px) {
+    .about-page .story {
+        padding: 200px 0 70px;
+    }
+
+    .about-page .story-first-part {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 90px;
+    }
+
+    .about-page .story-first-part .text {
+        width: 30%;
+    }
+
+    .about-page .story-first-part .paragraphs {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .about-page .story-first-part .about-image-1 {
+        width: 50%;
+        height: auto;
+        margin: 0;
+    }
+
+    .about-page .story .story-image {
+        height: calc(3vw + 353px);
+        background-position: center center;
+        align-items: flex-end;
+        padding: 0 100px;
+    }
+
+    .about-page .starlux-heart-paragraph {
+        width: 335px;
+        margin-left: auto;
+    }
+
+    .about-page .approach {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
