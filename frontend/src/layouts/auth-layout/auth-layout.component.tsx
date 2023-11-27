@@ -19,7 +19,7 @@ const AuthLayout = () => {
           <Outlet />
         </div>
       </section>
-      <video className='auth-background' src={loginBackground} autoPlay muted loop></video>
+      <video className='auth-background' src={loginBackground} autoPlay playsInline muted loop></video>
     </>
   )
 }
