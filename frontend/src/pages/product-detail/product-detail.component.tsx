@@ -1,16 +1,18 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { InputQuantity, ProductsList, Slider } from '../../components';
 import './product-detail.styles.css';
-import { useAddToCart, useGetAllProducts, useGetProductById } from '../../services';
-import { useAppDispatch } from '../../redux/hooks';
-import { setIsLoading } from '../../redux/slices/app.slice';
+import { AddToCartBody, useAddToCart, useGetAllProducts, useGetProductById } from '../../services';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { setIsLoading, setNotification } from '../../redux/slices/app.slice';
 import { spinner } from '../../assets/images';
 
 const ProductDetail = () => {
 
     const { id } = useParams();
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
+    const { isLogged } = useAppSelector(state => state.auth);
     const { isPending: productLoading, data: product } = useGetProductById(+(id || 0));
     const { data: productsList, isPending: isProductsListLoading } = useGetAllProducts({
         categoryId: product?.category.id
@@ -21,6 +23,14 @@ const ProductDetail = () => {
     useEffect(() => {
         dispatch(setIsLoading(productLoading))
     }, [ productLoading, dispatch ]);
+
+    const verifyAndAddToCart = (body: AddToCartBody) => {
+        if (!isLogged) {
+            dispatch(setNotification('You must be logged in order to add to cart'));
+            navigate('/auth/login');
+            return;
+        } else addToCart(body);
+    }
 
     if (productLoading || !product) return 'Is loading...';
 
@@ -45,7 +55,7 @@ const ProductDetail = () => {
                                 <InputQuantity quantity={quantity} setQuantity={setQuantity} />
                                 <button 
                                     className='link-squared' 
-                                    onClick={() => addToCart({product: product.id, quantity })}
+                                    onClick={() => verifyAndAddToCart({product: product.id, quantity })}
                                 >
                                     {addToCartPending ? <img src={spinner} /> : 'Add to cart'}
                                 </button>

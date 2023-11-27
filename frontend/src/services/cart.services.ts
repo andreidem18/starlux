@@ -49,7 +49,7 @@ export const usePurchaseCart = () => {
     })
 }
 
-interface AddToCartBody {
+export interface AddToCartBody {
     product: number;
     quantity: number;
 }
