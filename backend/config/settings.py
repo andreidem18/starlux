@@ -19,9 +19,6 @@ from datetime import timedelta
 env = environ.Env()
 environ.Env.read_env()
 
-import dj_database_url
-import django_heroku
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -47,15 +44,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'drf_spectacular',
+    'drf_spectacular_sidecar',
     'rest_framework',
-    'drf_yasg',
     'corsheaders',
     'users.apps.UsersConfig',
     'cart.apps.CartConfig',
     'categories.apps.CategoriesConfig',
     'images.apps.ImagesConfig',
     'orders.apps.OrdersConfig',
-    'products.apps.ProductsConfig'
+    'products.apps.ProductsConfig',
 ]
 
 MIDDLEWARE = [
@@ -90,6 +88,10 @@ TEMPLATES = [
     },
 ]
 
+SPECTACULAR_SETTINGS = {
+    "SWAGGER_UI_DIST": "https://cdn.jsdelivr.net/npm/swagger-ui-dist@latest",
+}
+
 
 
 REST_FRAMEWORK = {
@@ -100,7 +102,8 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated'
-    ]
+    ],
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 SIMPLE_JWT={'ACCESS_TOKEN_LIFETIME': timedelta(days=186)}
 
@@ -163,9 +166,6 @@ USE_L10N = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-
-django_heroku.settings(locals())
 
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

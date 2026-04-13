@@ -1,4 +1,4 @@
-from drf_yasg.utils import swagger_auto_schema
+from drf_spectacular.utils import extend_schema
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -19,6 +19,9 @@ def buy_cart(request):
     serialized = OrderSerializer(orders, many=True, context={"request": request})
     return Response(status=status.HTTP_200_OK, data = serialized.data)
 
+@extend_schema(
+    responses={200: CartSerializer},
+)
 @api_view(['GET'])
 def get_cart(request):
     user = request.user
@@ -31,7 +34,10 @@ class QuantitySerializer(ModelSerializer):
         model = Cart
         fields = ('quantity',)
 
-@swagger_auto_schema(methods=['put'], request_body=QuantitySerializer)
+@extend_schema(
+    request=QuantitySerializer,
+    responses={200: None},
+)
 @api_view(['PUT'])
 def change_quantity(request, item_id):
     item = Cart.objects.get(id=item_id)

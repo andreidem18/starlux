@@ -8,13 +8,28 @@ from cart.models import Cart
 from cart.serializer import CartSerializer
 from rest_framework.response import Response
 from rest_framework import status
-from drf_yasg.utils import swagger_auto_schema
-from drf_yasg import openapi
+from drf_spectacular.utils import extend_schema, OpenApiParameter
 
-name = openapi.Parameter('name__icontains', openapi.IN_QUERY, description="filter by name", type=openapi.TYPE_STRING)
-category = openapi.Parameter('category', openapi.IN_QUERY, description="filter by category", type=openapi.TYPE_INTEGER)
+name = OpenApiParameter(
+    name='name__icontains',
+    type=str,
+    location=OpenApiParameter.QUERY,
+    description="filter by name",
+)
 
-@swagger_auto_schema(methods=['get'], manual_parameters=[name, category])
+category = OpenApiParameter(
+    name='category',
+    type=int,
+    location=OpenApiParameter.QUERY,
+    description="filter by category",
+)
+
+@extend_schema(
+    parameters=[
+        OpenApiParameter(name="name", type=str, location=OpenApiParameter.QUERY),
+        OpenApiParameter(name="category", type=str, location=OpenApiParameter.QUERY),
+    ]
+)
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def products(request):
@@ -41,7 +56,10 @@ class AddToCartSerializer(ModelSerializer):
         model = Cart
         fields = ('product', 'quantity')
 
-@swagger_auto_schema(methods=['post'], request_body=AddToCartSerializer)
+@extend_schema(
+    request=AddToCartSerializer,
+    responses={200: CartSerializer},
+)
 @api_view(['POST'])
 def add_to_cart(request):
     user = request.user
