@@ -9,4 +9,4 @@ class Image(models.Model):
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, related_name='images')
     
     def __str__(self):
-        return self.url.url
+        return self.url.name if self.url else "No image"
