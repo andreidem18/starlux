@@ -2,17 +2,14 @@ version: '3'
 
 services:
   starlux:
+    image: ghcr.io/andreidem18/starlux-backend:latest
 
     container_name: starlux
-
-    build: 
-      context: .
-      dockerfile: Dockerfile
-
-    restart: always
 
     ports:
       - "3003:8000"
 
     env_file:
       - .env.production
+
+    restart: unless-stopped
