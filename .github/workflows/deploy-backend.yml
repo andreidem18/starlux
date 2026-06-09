@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: production
 
     permissions:
       contents: read
@@ -30,3 +31,13 @@ jobs:
           file: ./backend/Dockerfile
           push: true
           tags: ghcr.io/andreidem18/starlux-backend:latest
+
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.DROPLET_HOST }}
+          username: ${{ secrets.DROPLET_USER }}
+          key: ${{ secrets.DROPLET_SSH_KEY }}
+          script: |
+            cd /opt/starlux
+            ./deploy.sh
