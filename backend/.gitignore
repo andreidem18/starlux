@@ -3,6 +3,7 @@
 .env
 venv/
 env/
+.env.production
 *.sqlite3
 .idea/
 # Project asset folders

@@ -1,18 +1,41 @@
-# Distribution / packaging
-.Python
+# Environment
 .env
+.env.*
 venv/
-env/
-*.sqlite3
-.idea/
-# Project asset folders
-media/
-# Database
-db.sqlite3
-# Editor directories and files
-.idea
-# Byte-compiled / optimized / DLL files
+.venv/
+
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
+.Python
+
+# Databases
+*.sqlite3
+db.sqlite3
+
+# IDEs
+.idea/
+.vscode/
+
+# Git
+.git/
+.gitignore
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Django
+media/
 staticfiles/
+
+# OS
+.DS_Store
+Thumbs.db
